@@ -21,23 +21,28 @@
     </div>
     <script>
       // your code here...
-
-      // var colorItem = document.querySelectorAll('.color');
-      var colorsBox = document.querySelector('.colors-box')
-      var selectedColor = document.querySelector('.selected_color')
+      var colorItems = document.querySelectorAll(".colors-box");
+      var selectedColor = document.querySelector(".selected_color")
+      const colorsBox = document.querySelector(".colors-box");
+      const colorList = ["tomato","yellow","red","orange","gray","purple"]
       
-      // for(const item of colorItem){
-      //   item.addEventListener("click", changeColor);
-      // }
-      colorsBox.addEventListener('click', changeColor);
+      for(let color of colorList){
+        let newList = document.createElement("li");
+        newList.textContent = color;
+        newList.classList.add("color");
+        newList.style.backgroundColor = color
+        colorsBox.appendChild(newList)
+      }
+      for(const item of colorItems){
+        item.addEventListener("click", changeColor);
+      }
 
-      function changeColor(event) {
+
+      function changeColor(event){
         var clicked = event.target;
         var color = window.getComputedStyle(clicked).backgroundColor;
         selectedColor.style.backgroundColor = color;
-        console.log('change color to', color);
       }
-
     </script>
   </body>
 </html>
