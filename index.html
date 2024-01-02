@@ -27,12 +27,12 @@
       const colorList = ["tomato","yellow","red","orange","gray","purple"]
       
       for(let color of colorList){
-        let newList = document.createElement("li");
-        newList.textContent = color;
+        let newList = document.createElement("li");     
         newList.classList.add("color");
         newList.style.backgroundColor = color
         colorsBox.appendChild(newList)
       }
+
       for(const item of colorItems){
         item.addEventListener("click", changeColor);
       }
